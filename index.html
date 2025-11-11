@@ -35,9 +35,25 @@
             @apply bg-slate-800 p-8 rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 border border-slate-700 hover:border-accent;
         }
         
-        /* === EDIT: Added h-full to make all cards equal height === */
+        /* === EDIT: Added 'relative' to make the star visible by default === */
         .team-card {
-            @apply bg-slate-800 p-6 rounded-xl shadow-lg border border-slate-700 text-left flex flex-col transition-all duration-300 hover:border-slate-600 h-full;
+            @apply relative bg-slate-800 p-6 rounded-xl shadow-lg border border-slate-700 text-left flex flex-col transition-all duration-300 hover:border-slate-600 h-full hover:-translate-y-1 hover:shadow-xl;
+        }
+
+        /* === EDIT: Added keyframes and utility classes for entry animations === */
+        @keyframes fade-in {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes fade-in-up {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fade-in 0.6s ease-out forwards;
+        }
+        .animate-fade-in-up {
+            animation: fade-in-up 0.6s ease-out forwards;
         }
     </style>
     <script>
@@ -79,9 +95,10 @@
             </a>
 
             <div class="hidden md:flex items-center space-x-6">
-                <a href="#home" class="text-slate-300 hover:text-accent transition-colors">Home</a>
-                <a href="#team" class="text-slate-300 hover:text-accent transition-colors">High Command</a>
-                <a href="#manifesto" class="text-slate-300 hover:text-accent transition-colors">Manifesto</a>
+                <!-- === EDIT: Added transform and hover:-translate-y-0.5 to nav links === -->
+                <a href="#home" class="text-slate-300 hover:text-accent transition-all duration-300 transform hover:-translate-y-0.5">Home</a>
+                <a href="#team" class="text-slate-300 hover:text-accent transition-all duration-300 transform hover:-translate-y-0.5">High Command</a>
+                <a href="#manifesto" class="text-slate-300 hover:text-accent transition-all duration-300 transform hover:-translate-y-0.5">Manifesto</a>
                 <a href="#join" class="bg-accent text-primary-dark px-4 py-2 rounded-full font-bold hover:bg-accent-light transition-colors shadow-md hover:shadow-lg hover:-translate-y-0.5 transform">
                     Join Us
                 </a>
@@ -107,20 +124,24 @@
         <section id="home" class="relative bg-primary-dark hero-pattern pt-24 pb-32 overflow-hidden text-center">
             <div class="container mx-auto px-4 lg:px-8 relative z-10">
                 
-                <!-- === USER EDIT: Added Logo to Hero Section === -->
-                <img src="lcsun.png" alt="LCSUN Logo" class="h-28 w-auto mx-auto mb-8 rounded-full shadow-lg border-4 border-accent-dark/50" onerror="this.src='https://placehold.co/150x150/0f172a/facc15?text=LCSUN'">
+                <!-- === USER EDIT: Added Logo to Hero Section. EDIT: Added animation === -->
+                <img src="lcsun.png" alt="LCSUN Logo" class="h-28 w-auto mx-auto mb-8 rounded-full shadow-lg border-4 border-accent-dark/50 opacity-0 animate-fade-in" style="animation-delay: 100ms;" onerror="this.src='https://placehold.co/150x150/0f172a/facc15?text=LCSUN'">
                 
-                <h1 class="text-4xl md:text-6xl font-serif font-bold text-white mb-6 leading-tight">
+                <!-- === EDIT: Added animation === -->
+                <h1 class="text-4xl md:text-6xl font-serif font-bold text-white mb-6 leading-tight opacity-0 animate-fade-in-up" style="animation-delay: 300ms;">
                     LCSUN - Litti Chokha Student Union of NEHU
                 </h1>
-                <p class="text-xl md:text-2xl text-slate-300 mb-8 max-w-3xl mx-auto">
+                <!-- === EDIT: Added animation === -->
+                <p class="text-xl md:text-2xl text-slate-300 mb-8 max-w-3xl mx-auto opacity-0 animate-fade-in-up" style="animation-delay: 500ms;">
                     "Serving the <em>thekua</em>, Serving the Students."
                 </p>
-                <h2 class="text-3xl md:text-5xl font-serif font-bold text-accent italic max-w-4xl mx-auto leading-snug">
+                <!-- === EDIT: Added animation === -->
+                <h2 class="text-3xl md:text-5xl font-serif font-bold text-accent italic max-w-4xl mx-auto leading-snug opacity-0 animate-fade-in-up" style="animation-delay: 700ms;">
                     "Not the union you need, but the one you deserve."
                 </h2>
                 
-                <div class="max-w-2xl mx-auto mt-16 bg-primary-light/50 backdrop-blur-sm p-8 rounded-xl shadow-xl border border-primary-light">
+                <!-- === EDIT: Added animation === -->
+                <div class="max-w-2xl mx-auto mt-16 bg-primary-light/50 backdrop-blur-sm p-8 rounded-xl shadow-xl border border-primary-light opacity-0 animate-fade-in-up" style="animation-delay: 900ms;">
                     <h3 class="text-2xl font-serif font-bold text-white mb-4">A Message from the President</h3>
                     <p class="text-lg text-slate-200 italic mb-4">
                         "Welcome to the revolution. Our administration will usher in a new era of development, dignity, and <em>dal-pithis</em>. We are the leaders you deserve, and we are here to serve. <em>Jai LCSUN!</em>"
@@ -199,7 +220,8 @@
                             <li>Living proof that 'Bihari' is a "roommate-inflicted condition."</li>
                         </ul>
                     </div>
-                    <div class="team-card"> 
+                    <!-- === EDIT: Added lg:col-start-2 to center the second row of cards === -->
+                    <div class="team-card lg:col-start-2"> 
                         <!-- === EDIT: Added star === -->
                         <span class="absolute -top-4 -right-4 p-2 bg-accent rounded-full text-primary-dark shadow-lg">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">

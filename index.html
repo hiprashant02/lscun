@@ -35,8 +35,9 @@
             @apply bg-slate-800 p-8 rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 border border-slate-700 hover:border-accent;
         }
         
+        /* === EDIT: Added h-full to make all cards equal height === */
         .team-card {
-            @apply bg-slate-800 p-6 rounded-xl shadow-lg border border-slate-700 text-left flex flex-col transition-all duration-300 hover:border-slate-600;
+            @apply bg-slate-800 p-6 rounded-xl shadow-lg border border-slate-700 text-left flex flex-col transition-all duration-300 hover:border-slate-600 h-full;
         }
     </style>
     <script>
@@ -134,9 +135,11 @@
                 <h2 class="text-4xl md:text-5xl font-serif font-bold text-center mb-16 text-white">
                     Meet the High Command
                 </h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- === EDIT: Changed to lg:grid-cols-3 for better card width & added max-w-7xl mx-auto === -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
                     
-                    <div class="team-card ring-2 ring-accent-dark/50 transform scale-105 shadow-2xl bg-slate-800 border-slate-700">
+                    <!-- === EDIT: Removed scale/shadow/ring to make all cards uniform === -->
+                    <div class="team-card bg-slate-800 border-slate-700">
                         <span class="absolute -top-4 -right-4 p-2 bg-accent rounded-full text-primary-dark shadow-lg">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
                                 <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.76 2.31l-4.23 3.723 1.21 5.27c.28 1.22-.97 2.148-2.003 1.53l-4.7-2.798-4.7 2.798c-1.033.618-2.282-.31-2.003-1.53l1.21-5.27-4.23-3.723c-.877-.765-.403-2.217.76-2.31l5.404-.434 2.082-5.006Z" clip-rule="evenodd" />
@@ -153,6 +156,12 @@
                     </div>
 
                     <div class="team-card">
+                        <!-- === EDIT: Added star === -->
+                        <span class="absolute -top-4 -right-4 p-2 bg-accent rounded-full text-primary-dark shadow-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                                <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.76 2.31l-4.23 3.723 1.21 5.27c.28 1.22-.97 2.148-2.003 1.53l-4.7-2.798-4.7 2.798c-1.033.618-2.282-.31-2.003-1.53l1.21-5.27-4.23-3.723c-.877-.765-.403-2.217.76-2.31l5.404-.434 2.082-5.006Z" clip-rule="evenodd" />
+                            </svg>
+                        </span>
                         <h3 class="text-2xl font-serif font-bold mb-2 text-white">Omkar Mishra</h3>
                         <p class="text-sm font-medium text-slate-400 uppercase tracking-wider mb-4">Vice-President</p>
                         <blockquote class="text-accent-light text-lg italic my-4 border-l-4 border-accent-dark pl-4 text-left">
@@ -170,6 +179,12 @@
                     </div>
                     
                     <div class="team-card">
+                        <!-- === EDIT: Added star === -->
+                        <span class="absolute -top-4 -right-4 p-2 bg-accent rounded-full text-primary-dark shadow-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                                <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.76 2.31l-4.23 3.723 1.21 5.27c.28 1.22-.97 2.148-2.003 1.53l-4.7-2.798-4.7 2.798c-1.033.618-2.282-.31-2.003-1.53l1.21-5.27-4.23-3.723c-.877-.765-.403-2.217.76-2.31l5.404-.434 2.082-5.006Z" clip-rule="evenodd" />
+                            </svg>
+                        </span>
                         <h3 class="text-2xl font-serif font-bold mb-2 text-white">Pankaj Roy</h3>
                         <p class="text-sm font-medium text-slate-400 uppercase tracking-wider mb-4">General Secretary</p>
                         <blockquote class="text-accent-light text-lg italic my-4 border-l-4 border-accent-dark pl-4 text-left">
@@ -185,6 +200,12 @@
                         </ul>
                     </div>
                     <div class="team-card"> 
+                        <!-- === EDIT: Added star === -->
+                        <span class="absolute -top-4 -right-4 p-2 bg-accent rounded-full text-primary-dark shadow-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                                <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.76 2.31l-4.23 3.723 1.21 5.27c.28 1.22-.97 2.148-2.003 1.53l-4.7-2.798-4.7 2.798c-1.033.618-2.282-.31-2.003-1.53l1.21-5.27-4.23-3.723c-.877-.765-.403-2.217.76-2.31l5.404-.434 2.082-5.006Z" clip-rule="evenodd" />
+                            </svg>
+                        </span>
                         <h3 class="text-2xl font-serif font-bold mb-2 text-white">Rishu</h3>
                         <p class="text-sm font-medium text-slate-400 uppercase tracking-wider mb-4">Legal Advisor & Chief of Loopholes</p>
                         <blockquote class="text-accent-light text-lg italic my-4 border-l-4 border-accent-dark pl-4 text-left">
@@ -198,6 +219,12 @@
                         </ul>
                     </div>
                     <div class="team-card">
+                        <!-- === EDIT: Added star === -->
+                        <span class="absolute -top-4 -right-4 p-2 bg-accent rounded-full text-primary-dark shadow-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                                <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.76 2.31l-4.23 3.723 1.21 5.27c.28 1.22-.97 2.148-2.003 1.53l-4.7-2.798-4.7 2.798c-1.033.618-2.282-.31-2.003-1.53l1.21-5.27-4.23-3.723c-.877-.765-.403-2.217.76-2.31l5.404-.434 2.082-5.006Z" clip-rule="evenodd" />
+                            </svg>
+                        </span>
                         <h3 class="text-2xl font-serif font-bold mb-2 text-white">Ayanabh</h3>
                         <p class="text-sm font-medium text-slate-400 uppercase tracking-wider mb-4">Minister of Morale (and Room Audits)</p>
                         <blockquote class="text-accent-light text-lg italic my-4 border-l-4 border-accent-dark pl-4 text-left">
